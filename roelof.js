@@ -1,22 +1,20 @@
-console.log('js werkt'); 
-/*
-const validateEmailInput = () => {
-    
-    var div = document.querySelector('.email');
-    var input_box = document.querySelector('.mail'); 
-    var icon = div.querySelector('.icon_error')
-    var input = document.querySelector('.mail').value;
-    var error_message = div.querySelector('.error');
-        
-    // validate input if it is a valid email adress
+var button = document.querySelector('button');
+var error_message = document.querySelector('.error'); 
 
+button.addEventListener('click', (e) => {
+    e.preventDefault(); 
+    var inputbox = document.querySelector('input'); 
+    var input = inputbox.value;
+    
     var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
     if (!input.match(validRegex)){
-        error_message.innerHTML = "Looks like this is not a valid email address"
+        error_message.style = "visibility: visible" ;
+        inputbox.style = "border: 1px solid red" ; 
+    } else {
+        inputbox.style = "border: 1px solid green"; 
+        error_message.style = 'visibiliy: hidden'
     }
-    
-    displayErrorMessage(input.match(validRegex), error_message , input_box, icon); 
-}
 
-*/ 
+})
+
